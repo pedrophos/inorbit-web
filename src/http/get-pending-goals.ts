@@ -1,3 +1,5 @@
+import { base_url } from '../env'
+
 type PendingGoals = {
   id: string
   title: string
@@ -6,7 +8,7 @@ type PendingGoals = {
 }[]
 
 export async function getPendingGoals(): Promise<PendingGoals> {
-  const response = await fetch('http://localhost:3333/pending-goals')
+  const response = await fetch(`${base_url}/pending-goals`)
   const data = await response.json()
 
   return data.pendingGoals

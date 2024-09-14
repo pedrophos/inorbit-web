@@ -1,3 +1,5 @@
+import { base_url } from '../env'
+
 interface createGoalCompletion {
   title: string
   desiredWeeklyFrequency: number
@@ -7,7 +9,7 @@ export async function createGoal({
   title,
   desiredWeeklyFrequency,
 }: createGoalCompletion) {
-  await fetch('http://localhost:3333/goals', {
+  await fetch(`${base_url}/goals`, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
